@@ -17,3 +17,16 @@ interface AuthType {
     errorMessage: string | null
     user: UserType | null
 }
+
+interface ClassroomFormType {
+    name: string
+    description: string
+    capacity: number
+}
+
+interface ClassRoomType {
+    id: string
+    name: string
+    description: string
+    capacity: number
+}

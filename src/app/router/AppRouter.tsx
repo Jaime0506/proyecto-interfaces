@@ -13,7 +13,7 @@ const validation = (status: stateAuth):boolean => {
 
 export const AppRouter: RouteObject = {
     path: 'app',
-    element: <ValidationRoutes validation={validation} path="/" />,
+    element: <ValidationRoutes validation={validation} path="/" app/>,
     children: [
         {
             path: '',

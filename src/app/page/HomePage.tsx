@@ -1,5 +1,6 @@
 import { Button } from "@nextui-org/react"
 import { useAuth } from "../../hooks/useAuth"
+import { AdminPage } from "./AdminPage"
 
 const UID_ADMIN = import.meta.env.VITE_ADMIN_UID
 
@@ -7,22 +8,11 @@ export const HomePage = () => {
 
     const { onLogout, user } = useAuth()
 
-    const renderTest = () => {
-        if (user?.id === UID_ADMIN) {
-            return (
-                <h1>Soy el admin</h1>
-            )
-        }
-
-        return (
-            <h1>No soy el admin</h1>
-        )
-    }
+   if (user?.id === UID_ADMIN) return <AdminPage />
 
     return (
         <>
-            {renderTest()}
-
+            
             <Button
                 onClick={onLogout}
             >

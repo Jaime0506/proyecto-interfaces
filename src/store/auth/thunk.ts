@@ -6,7 +6,6 @@ import { checking, login, logout } from "./authSlice"
 export const handleOnLogin = (form: UserFormType) => {
     return async (dispatch: AppDispatch) => {
         dispatch(checking())
-        console.log(form.email, form.password)
         
         const { data, error } = await supabase.auth.signInWithPassword({
             email: form.email,
