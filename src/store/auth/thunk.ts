@@ -27,6 +27,7 @@ export const handleOnLogin = (form: UserFormType) => {
         }
             
         const user_logged:UserType = {
+            id: data.user.id,
             email: data.user.email ? data.user.email : '',
             name: ''
         }
@@ -72,6 +73,7 @@ export const handleOnChecking = () => {
         }
 
         const user_logged: UserType = {
+            id: data.user.id,
             email: data.user.email ? data.user.email : '',
             name: ''
         }

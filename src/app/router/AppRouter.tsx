@@ -18,6 +18,6 @@ export const AppRouter: RouteObject = {
         {
             path: '',
             element: <HomePage />
-        }
+        },
     ]
 }
