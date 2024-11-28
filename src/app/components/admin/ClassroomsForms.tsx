@@ -2,6 +2,7 @@ import { Button, Input, Textarea } from "@nextui-org/react"
 import { ClassroomFormType } from "../../../types"
 import { useState } from "react"
 import { CreateClassroom } from "../../../utils/CreateClassroom"
+import { useNavigate } from "react-router-dom"
 
 const INITIAL_STATE_FORM: ClassroomFormType = {
     name: '',
@@ -10,6 +11,7 @@ const INITIAL_STATE_FORM: ClassroomFormType = {
 }
 
 export const ClassroomsForms = () => {
+    const navigate = useNavigate();
 
     const [form, setForm] = useState({...INITIAL_STATE_FORM});
     const [isLoading, setIsLoading] = useState(false);
@@ -42,11 +44,18 @@ export const ClassroomsForms = () => {
         })
     }
 
+    const handleClick = () => {
+        navigate("chatbot");
+    }
+
     return (
         <div className="container shadow-2xl rounded p-6 flex flex-col gap-4">
             <section>
                 Crea un espacio de trabajo
             </section>
+            <button onClick={handleClick}>
+                Ir al Chatbot
+            </button>
 
             <section className="bg-green-500 p-8 rounded">
                 <form onSubmit={handleOnSubmit} className="flex flex-col gap-4">

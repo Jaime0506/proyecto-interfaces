@@ -2,6 +2,7 @@ import { RouteObject } from "react-router-dom";
 import { ValidationRoutes } from "../../utils/ValidationRoutes";
 import { stateAuth } from "../../types";
 import { HomePage } from "../page/HomePage";
+import { ChatBot } from "../components/ChatBot";
 
 const validation = (status: stateAuth):boolean => {
     if (status === "authenticated") {
@@ -17,7 +18,11 @@ export const AppRouter: RouteObject = {
     children: [
         {
             path: '',
-            element: <HomePage />
+            element: <HomePage />,
+        },
+        {
+            path: 'chatbot',
+            element: <ChatBot />,
         },
     ]
 }
